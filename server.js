@@ -15,9 +15,14 @@ app.get("/", (req, res) => {
 
 require("./app/routes/customer.routes")(app);
 
-app.listen( 3000, () => {
-    console.log("Listening on port 3000");
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}.`);
 });
+
+// app.listen( 3000, () => {
+//     console.log("Listening on port 3000");
+// });
 
 
 
